@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedang - Kuis Newjeans - @hnnxzee</title>
+    <meta property="og:title" content="HNNXZEE - NewJeans Fansite">
+    <meta property="og:description" content="How well do you know NewJeans? Put your knowledge to the test in this game!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/hnnxzee/hnnxzee.github.io/main/hnnxzee.png">
+    <meta property="og:url" content="hnnxzee.github.io">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="How well do you know NewJeans? Put your knowledge to the test in this game!">
+    <meta name="keywords" content="HNNXZEE, Hanni Pham, fansite, music, dance, newjeans fansite, newjeans, newjeans game, newjeans quiz">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/game/newjeansquiz/dist/styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+</head>
+
+<body>
+    <div class="backdrop" id="backdrop"></div>
+    <header><a href="/" target="_blank">
+            <h1>hnnxzee</h1>
+        </a>
+    </header>
+    <div class="container">
+        <div class="quiz-info">
+            <div class="radio-inputs mb-2">
+                <label class="radio">
+                    <input type="radio" name="radio"  onclick="location.href='/game/newjeansquiz/id/easy';">
+                    <span class="name">Mudah</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="radio" checked="" onclick="location.href='#' ;">
+                    <span class="name">Sedang</span>
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="radio" onclick="location.href='/game/newjeansquiz/id/hard';">
+                    <span class="name">Susah</span>
+                </label>
+            </div>
+            <img class="quiz-image lozad" src="/game/newjeansquiz/img/funquiz.png" alt="Quiz Image">
+            <div style="display: flex; gap: 20px; margin: 5px;">
+                <a href="#">
+                    <button class="small-button">ID</button>
+                </a>
+                <a href="/game/newjeansquiz/en/medium/index.html">
+                    <button class="small-button ">EN</button>
+                </a>
+            </div>
+            <div class="name-input-container">
+                <div class="textInputWrapper">
+                    <input id="userName" placeholder="Nama" type="text" class="textInput">
+                </div>
+                <button id="playButton" class="play-button">
+                    <img class="lozad" src="/game/newjeansquiz/img/bunny.png" alt="">
+                    <span class="now">now!</span>
+                    <span class="play">play</span>
+                </button>
+                <p class="description">Seberapa jauh pengetahuanmu tentang NewJeans? Mari kita buktikan dalam tantangan ini!</p>
+            </div>
+            <button class="twitter">
+                <a href="https://twitter.com/hnnxzee" target="_blank">
+                    <span class="icon"><svg height="33" viewBox="0 0 60 60" width="33"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="m30 60c16.5685433 0 30-13.4314567 30-30s-13.4314567-30-30-30-30 13.4314567-30 30 13.4314567 30 30 30z"
+                                    fill="#00acee"></path>
+                                <path
+                                    d="m41.0521385 18.4366943c-1.2089539-1.3744928-2.9316-2.2502302-4.838077-2.2819633-3.6604615-.0609279-6.6284077 3.0321924-6.6284077 6.908385 0 .5501252.0586385 1.0865774.1717154 1.6015572-5.5087846-.3573206-10.3929-3.2259026-13.6619538-7.5499514-.5705539 1.0361399-.8975077 2.2471609-.8975077 3.5444286 0 2.455838 1.1701846 4.6353768 2.9487231 5.922267-1.0865077-.0479675-2.1085616-.3768796-3.0021923-.9164654-.0006462.029493-.0006462.0589929-.0006462.0890105 0 3.4295872 2.2848 6.3067451 5.3170385 6.9769758-.556177.1575997-1.1417539.240078-1.7462308.2360697-.4271077-.0028322-.8424231-.0501962-1.2470769-.13524.8433923 2.8126097 3.2911846 4.8649983 6.1917692 4.93286-2.2684846 1.8830683-5.1264231 3.0045653-8.232 2.998159-.5350154-.0011037-1.0626-.035675-1.5811385-.1021874 2.933377 2.0127143 6.4174385 3.1845715 10.1606077 3.1855535 12.1917923.0031987 18.8589693-10.6066422 18.8589693-19.8093844 0-.3019324-.0066231-.6022496-.0192231-.9011167 1.2950538-.9649855 2.4187154-2.1748628 3.3073385-3.556433-1.1886.5357972-2.4662077.8916496-3.8068154 1.0409189 1.3683923-.8421727 2.419523-2.1900418 2.9143154-3.8063795-1.2808385.7767339-2.6993077 1.3337545-4.2092077 1.6229359z"
+                                    fill="#fff"></path>
+                            </g>
+                        </svg></span>
+                    <span class="text1">Follow me</span>
+                    <span class="text2">@hnnxzee</span>
+                </a>
+            </button>
+        </div>
+        <div class="modal" id="nextModal">
+            <div class="modal-content">
+                <p>Waktu Habis!</p>
+                <button class="normal-button mt-2" id="nextModalButton"><i
+                        class='bx bx-right-arrow-circle'></i>Next</button>
+            </div>
+        </div>
+
+        <div class="modal" id="nameModal">
+            <div class="modal-content">
+                <span class="icon-modal"><i class="bx bxs-error bx-tada-hover bx-flashing bx-md"></i></span>
+                <span class="close" id="closeModal">&times;</span>
+                <p>Tulis namamu terlebih dahulu!</p>
+            </div>
+        </div>
+        <div class="modal" id="warningModal">
+            <div class="modal-content">
+                <span class="icon-modal"><i class="bx bxs-error bx-tada-hover bx-flashing bx-md"></i></span>
+                <span class="close" id="closeModalWarning">&times;</span>
+                <p>Anda belum memilih jawaban!</p>
+            </div>
+        </div>
+        <div class="modal" id="lengthModal">
+            <div class="modal-content">
+                <span class="icon-modal"><i class="bx bxs-error bx-tada-hover bx-flashing bx-md"></i></span>
+                <span class="close" id="closelengthWarning">&times;</span>
+                <p>Nama maksimal 25 karakter!</p>
+            </div>
+        </div>
+        <main>
+            <div class="question">
+                <div class="radio-input">
+                    <p style="display: block; text-align:center;" id="timer">Waktu Tersisa: 20</p>
+                    <div class="info">
+                        <span id="questionNumber">@</span>
+                        <span id="questionHeader">@</span>
+                    </div>
+                    <div class="answers" id="answerOptions"></div>
+                    <button class="normal-button mt-2" id="nextButton"><i
+                            class='bx bx-right-arrow-circle'></i>Next</button>
+                </div>
+            </div>
+        </main>
+
+        <div class="result-container">
+            <div class="result">
+                <h2 class="completed">Kuis telah selesai!</h2>
+                <p class="center" style="display: none; margin-bottom: 20px;" id="uncompleted">Semoga berhasil di lain waktu!</p>
+                <p class="mb-2" id="score"></p>
+                <div class="result-image-container" style="display: none;">
+                    <img data-src="" alt="Quiz Completed Image" class="result-image lozad">
+                </div>
+            </div>
+            <p class="center" style="display: none; margin-bottom: 20px;" id="finish"></p>
+            <div class="certificate-container">
+                <img class="certificate-image lozad" data-src="/game/newjeansquiz/img/bg3.png" alt="Certificate Image">
+                <div class="certificate-content">
+                    <h2>Certificate of Achievement</h2>
+                    <h4>proudly present to : </h4>
+                    <h1 id="userNameCertificate"></h1>
+                    <h3>"Medium Level"</h3>
+                    <p>Sertifikat ini diberikan atas keberhasilan menjawab seluruh soal 'NewJeans Fun Quiz' pada level Medium."</p>
+                    <span id="dateText"></span>
+                    <h6>hnnxzee@github.io</h6>
+                </div>
+
+            </div>
+            <div class="button-container mt-2">
+                <button class="normal-button" style="display:none;" id="captureButton"><i
+                        class='bx bx-download'></i>Download</button>
+                <button class="normal-button" style="display:none;" id="playAgainButton">
+                    <i class='bx bx-rotate-right'></i>
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay">
+        <p id="countdown">5</p>
+    </div>
+    <canvas class="confetti" id="canvas"></canvas>
+    <footer>
+        <p>
+            &copy;2023 <a href="https://twitter.com/hnnxzee" target="_blank">hnnxzee</a>
+        </p>
+    </footer>
+    <script>
+        const observer = lozad('.lozad', {
+            loaded: function (el) {
+                el.classList.add('loaded');
+            },
+        });
+        observer.observe();
+    </script>
+    <script src="/game/newjeansquiz/dist/confetti.js"></script>
+    <script src="/game/newjeansquiz/dist/id/medium/scripts.js"></script>
+    <script>
+       
+    </script>
+</body>
+
+</html>
