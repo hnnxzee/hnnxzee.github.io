@@ -1,1 +1,37 @@
-function toggleDarkMode(){let e=document.querySelector(".container");e.classList.toggle("dark-mode");let t=document.querySelector(".body");t.classList.toggle("dark-mode");let o=t.classList.contains("dark-mode");localStorage.setItem("darkModePreference",o)}function startSlideshow(){let e=0,t=document.querySelectorAll(".slideshow img"),o=t.length;function r(e){t.forEach((t,o)=>{t.classList.toggle("active",o===e)})}r(e),setInterval(function t(){r(e=(e+1)%o)},5e3)}window.addEventListener("load",function(){let e=localStorage.getItem("darkModePreference");if("true"===e){let t=document.querySelector(".container"),o=document.querySelector(".body");t.classList.add("dark-mode"),o.classList.add("dark-mode")}}),startSlideshow();const lazyImages=document.querySelectorAll('img[loading="lazy"]');function loadVideo(){let e=document.getElementById("videoContainer");if(!e.classList.contains("show-video")){e.classList.add("show-video");let t=document.createElement("iframe");t.classList.add("youtube-iframe"),t.src="https://www.youtube.com/embed/dJdqn5v4Dkw?autoplay=1&controls=1&mute=0&enablejsapi=1",t.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",t.allowFullscreen=!0,e.appendChild(t)}}lazyImages.forEach(e=>{e.addEventListener("load",()=>{e.removeAttribute("loading")})});const youtubeIcon=document.querySelector(".youtube-icon");function toggleBurgerMenu(){let e=document.getElementById("burgerContent");e.classList.toggle("show-burger-menu")}youtubeIcon.addEventListener("click",loadVideo);const burgerIcon=document.getElementById("burgerIcon");function hideBurgerMenu(){let e=document.getElementById("burgerContent");e.classList.remove("show-burger-menu")}burgerIcon.addEventListener("click",toggleBurgerMenu);const burgerLinks=document.querySelectorAll(".burger-link");function toggleBurgerMenuOnScroll(){let e=document.getElementById("burgerMenu"),t=document.querySelector(".menu-buttons"),o=t.getBoundingClientRect(),r=o.top>=0&&o.bottom<=window.innerHeight;e.classList.toggle("show-burger-menu",!r)}burgerLinks.forEach(e=>{e.addEventListener("click",hideBurgerMenu)}),window.addEventListener("scroll",toggleBurgerMenuOnScroll);
+function toggleDarkMode() {
+    let e = document.querySelector(".container");
+    e.classList.toggle("dark-mode");
+    let t = document.querySelector(".body");
+    t.classList.toggle("dark-mode");
+    let o = t.classList.contains("dark-mode");
+    localStorage.setItem("darkModePreference", o);
+}
+function startSlideshow() {
+    let e = 0,
+        t = document.querySelectorAll(".slideshow img"),
+        o = t.length;
+    function r(e) {
+        t.forEach((t, o) => {
+            t.classList.toggle("active", o === e);
+        });
+    }
+    r(e),
+        setInterval(function t() {
+            r((e = (e + 1) % o));
+        }, 5e3);
+}
+window.addEventListener("load", function () {
+    let e = localStorage.getItem("darkModePreference");
+    if ("true" === e) {
+        let t = document.querySelector(".container"),
+            o = document.querySelector(".body");
+        t.classList.add("dark-mode"), o.classList.add("dark-mode");
+    }
+}),
+    startSlideshow();
+const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+lazyImages.forEach((e) => {
+    e.addEventListener("load", () => {
+        e.removeAttribute("loading");
+    });
+});
